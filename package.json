@@ -14,7 +14,7 @@
     "analyze": "source-map-explorer 'www/*.js.map'",
     "clean:dist": "node ./build/clean.js dist",
     "app": "webpack serve --config=./webpack.config.js --progress",
-    "build:prod": "yarn run build && webpack --config=./webpack.config.js --mode=production",
+    "build:prod": "webpack --config=./webpack.config.js --mode=production",
     "build:dev": "webpack --config=./webpack.config.js --mode=development --devtool source-map",
     "build": "tsc -p ./tsconfig.json && rollup -c && yarn doc",
     "dev": "tsc -p ./tsconfig.json -w",
@@ -63,7 +63,6 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@fluentui/react-theme": "^9.0.0-rc.1",
     "@microsoft/fast-element": "^1.7.0",
     "@microsoft/fast-foundation": "^2.36.0",
     "@skatejs/val": "^0.5.0",

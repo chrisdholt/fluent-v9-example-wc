@@ -2,11 +2,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line import/order
 import h from "./pragma"; /* Note: Import wrapped createElement. */
-
 import ReactDOM from "react-dom";
-import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { Fragment } from "react";
 import { FluentButton } from "../src/index";
-const layoutStyles = { display: "grid", gap: "12px", padding: "12px" };
 
 enum Component {
   Button = "button",
@@ -46,11 +44,6 @@ const renderComponent = () => {
 };
 
 ReactDOM.render(
-  <FluentProvider
-    style={{ display: "grid", gap: "12px" }}
-    theme={webLightTheme}
-  >
-    <div style={layoutStyles}>{renderComponent()}</div>
-  </FluentProvider>,
+  <Fragment>{renderComponent()}</Fragment>,
   document.getElementById("root")
 );
