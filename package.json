@@ -14,7 +14,7 @@
     "analyze": "source-map-explorer 'www/*.js.map'",
     "clean:dist": "node ./build/clean.js dist",
     "app": "webpack serve --config=./webpack.config.js --progress",
-    "build:prod": "webpack --config=./webpack.config.js --mode=production",
+    "build:prod": "yarn run build && webpack --config=./webpack.config.js --mode=production",
     "build:dev": "webpack --config=./webpack.config.js --mode=development --devtool source-map",
     "build": "tsc -p ./tsconfig.json && rollup -c && yarn doc",
     "dev": "tsc -p ./tsconfig.json -w",
