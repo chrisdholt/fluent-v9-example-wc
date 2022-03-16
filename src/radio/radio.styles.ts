@@ -79,13 +79,12 @@ slot[name='checked-indicator'] {
   border-color: ${tokens.colorNeutralStrokeAccessibleHover};
 }
 
-:host(:not([disabled]):active) ::slotted(*)
-:host(:not([disabled]):active) > * {
-  color: ${tokens.colorNeutralForeground1};
-}
-
 :host(:not([disabled]):active) .control {
   border-color: ${tokens.colorNeutralStrokeAccessiblePressed};
+}
+
+:host([aria-checked="true"]:not([disabled])) {
+  color: ${tokens.colorNeutralForeground1};
 }
 
 :host([aria-checked="true"]:not([disabled])) slot[name='checked-indicator'] {
