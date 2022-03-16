@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@fluentui/react-theme": "^9.0.0-rc.1",
-    "@microsoft/fast-element": "^1.5.0",
+    "@microsoft/fast-element": "^1.7.0",
     "@microsoft/fast-foundation": "^2.36.0",
     "@microsoft/fast-web-utilities": "^5.1.0",
     "tslib": "^1.13.0"

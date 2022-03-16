@@ -13,6 +13,7 @@ export * from "./checkbox/index";
 export * from "./counter-badge/index";
 export * from "./divider/index";
 export * from "./image/index";
+export * from "./label/index";
 export * from "./link/index";
 export * from "./menu-button/index";
 export * from "./presence-badge/index";

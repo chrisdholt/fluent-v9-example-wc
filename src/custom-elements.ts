@@ -10,6 +10,7 @@ import { FluentCheckbox } from "./checkbox/index";
 import { FluentCounterBadge } from "./counter-badge/index";
 import { FluentDivider } from "./divider/index";
 import { FluentImage } from "./image/index";
+import { FluentLabel } from "./label/index";
 import { FluentLink } from "./link/index";
 import { FluentMenuButton } from "./menu-button/index";
 import { FluentPresenceBadge } from "./presence-badge/index";
@@ -35,6 +36,7 @@ export const AllComponents = {
     FluentCounterBadge,
     FluentDivider,
     FluentImage,
+    FluentLabel,
     FluentLink,
     FluentMenuButton,
     FluentPresenceBadge,
