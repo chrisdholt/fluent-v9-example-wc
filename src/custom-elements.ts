@@ -13,6 +13,8 @@ import { FluentImage } from "./image/index";
 import { FluentLink } from "./link/index";
 import { FluentMenuButton } from "./menu-button/index";
 import { FluentPresenceBadge } from "./presence-badge/index";
+import { FluentRadio } from "./radio/index";
+import { FluentRadioGroup } from "./radio-group/index";
 import { FluentText } from "./text/index";
 import { FluentToggleButton } from "./toggle-button/index";
 
@@ -32,6 +34,8 @@ export const AllComponents = {
     FluentLink,
     FluentMenuButton,
     FluentPresenceBadge,
+    FluentRadio,
+    FluentRadioGroup,
     FluentText,
     FluentToggleButton
 };

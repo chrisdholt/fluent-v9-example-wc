@@ -16,5 +16,7 @@ export * from "./image/index";
 export * from "./link/index";
 export * from "./menu-button/index";
 export * from "./presence-badge/index";
+export * from "./radio/index";
+export * from "./radio-group/index";
 export * from "./text/index";
 export * from "./toggle-button/index";

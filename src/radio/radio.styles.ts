@@ -26,12 +26,19 @@ ${display('inline-flex')} :host {
   position: relative;
   flex-direction: row;
   gap: ${spacingHorizontalM};
+  padding: 6px;
   font-size: ${tokens.fontSizeBase300};
   line-height: ${tokens.lineHeightBase300};
   color: ${tokens.colorNeutralForeground3};
   transition: all 0.2s ease-in-out;
 }
 
+::slotted(*) {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+:host(:not.readonly),
 :host(:not([disabled])) {
   cursor: pointer;
 }
@@ -72,7 +79,8 @@ slot[name='checked-indicator'] {
   border-color: ${tokens.colorNeutralStrokeAccessibleHover};
 }
 
-:host(:not([disabled]):active) {
+:host(:not([disabled]):active) ::slotted(*)
+:host(:not([disabled]):active) > * {
   color: ${tokens.colorNeutralForeground1};
 }
 
@@ -80,7 +88,7 @@ slot[name='checked-indicator'] {
   border-color: ${tokens.colorNeutralStrokeAccessiblePressed};
 }
 
-:host(:not([disabled]):active) slot[name='checked-indicator'] {
+:host([aria-checked="true"]:not([disabled])) slot[name='checked-indicator'] {
   opacity: 1;
 }
 
@@ -111,7 +119,7 @@ slot[name='checked-indicator'] {
   opacity: 1;
 }
 
-:host([disabled]) ::slotted(*) {
+:host([disabled]) {
   color: ${tokens.colorNeutralForegroundDisabled};
 }
 
