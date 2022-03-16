@@ -42,7 +42,6 @@ const renderComponent = () => {
       return <FluentButton appearance="primary">Button</FluentButton>;
   }
 };
-
 ReactDOM.render(
   <Fragment>{renderComponent()}</Fragment>,
   document.getElementById("root")

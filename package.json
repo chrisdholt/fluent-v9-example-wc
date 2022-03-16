@@ -11,14 +11,12 @@
   "main": "dist/esm/index.js",
   "types": "dist/fluent-wc-v9.d.ts",
   "scripts": {
-    "analyze": "source-map-explorer 'www/*.js.map'",
     "clean:dist": "node ./build/clean.js dist",
     "app": "webpack serve --config=./webpack.config.js --progress",
     "build:prod": "webpack --config=./webpack.config.js --mode=production",
     "build:dev": "webpack --config=./webpack.config.js --mode=development --devtool source-map",
-    "build": "tsc -p ./tsconfig.json && rollup -c && yarn doc",
+    "build": "tsc -p ./tsconfig.json && rollup -c",
     "dev": "tsc -p ./tsconfig.json -w",
-    "doc": "api-extractor run --local",
     "tdd": "npm run dev & npm run test-chrome:watch",
     "prepare": "yarn clean:dist && yarn build",
     "prettier": "prettier --config .prettierrc --write \"**/*.{ts,html}\"",
@@ -31,7 +29,6 @@
   },
   "devDependencies": {
     "@fluentui/react-components": "9.0.0-rc.1",
-    "@microsoft/api-extractor": "7.8.1",
     "@microsoft/eslint-config-fast-dna": "^2.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -57,6 +54,7 @@
     "ts-loader": "^7.0.2",
     "ts-node": "^8.9.1",
     "tsconfig-paths": "^3.9.0",
+    "tslib": "^1.13.0",
     "typescript": "^3.9.0",
     "webpack": "^5.64.4",
     "webpack-bundle-analyzer": "^4.5.0",
@@ -66,8 +64,7 @@
   "dependencies": {
     "@microsoft/fast-element": "^1.7.0",
     "@microsoft/fast-foundation": "^2.36.0",
-    "@skatejs/val": "^0.5.0",
-    "tslib": "^1.13.0",
-    "yargs": "^17.3.1"
+    "@microsoft/fast-web-utilities": "^5.1.0",
+    "@skatejs/val": "^0.5.0"
   }
 }
