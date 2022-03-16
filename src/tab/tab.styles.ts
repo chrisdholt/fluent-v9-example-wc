@@ -15,6 +15,7 @@ export const contentPadding = "2px";
  */
 export const tabStyles = css`
     ${display('inline-flex')} :host {
+        --tab-padding: ${tabPaddingM};
         box-sizing: border-box;
         position: relative;
         font-family: ${tokens.fontFamilyBase};
@@ -30,7 +31,7 @@ export const tabStyles = css`
         border-radius: ${tokens.borderRadiusMedium};
         border-width: ${tokens.strokeWidthThin};
         column-gap: ${columnGapM};
-        padding: ${tabPaddingM};
+        padding: var(--tab-padding);
         cursor: pointer;
         overflow: hidden;
     }
@@ -50,7 +51,7 @@ export const tabStyles = css`
         position: absolute;
         bottom: 0px;
         height: 2px;
-        width: calc(100% - (${tabPaddingM} * 2));
+        width: calc(100% - (var(--tab-padding) * 2));
     }
 
     :host(.vertical)::after {
@@ -58,7 +59,7 @@ export const tabStyles = css`
         position: absolute;
         left: 0px;
         width: 2px;
-        height: calc(100% - (${tabPaddingM} * 2));
+        height: calc(100% - (var(--tab-padding) * 2));
         transform: translateY(-50%);
     }
 
@@ -83,5 +84,10 @@ export const tabStyles = css`
         font-size: 20px;
         height: 20px;
         width: 20px;
+    }
+
+    :host(size="small") {
+        --tab-padding: ${tabPaddingS};
+        gap: ${columnGapS};
     }
 `;

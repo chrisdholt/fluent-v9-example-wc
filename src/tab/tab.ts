@@ -1,5 +1,13 @@
 import { attr, FASTElement } from "@microsoft/fast-element";
 
+ /**
+ * Types of Tab size.
+ * @public
+ */
+  export type TabSize =
+  | "small"
+  | "medium";
+
 /**
  * A Tab Component to be used with {@link @microsoft/fast-foundation#(Tabs:class)}
  * @public
@@ -14,4 +22,15 @@ export class Tab extends FASTElement {
      */
     @attr({ mode: "boolean" })
     public disabled: boolean;
+
+
+    /**
+     * The size the button should have.
+     *
+     * @public
+     * @remarks
+     * HTML Attribute: shape
+     */
+     @attr
+     public size: TabSize  = "medium";
 }
