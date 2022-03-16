@@ -15,6 +15,7 @@ import { FluentMenuButton } from "./menu-button/index";
 import { FluentPresenceBadge } from "./presence-badge/index";
 import { FluentRadio } from "./radio/index";
 import { FluentRadioGroup } from "./radio-group/index";
+import { FluentSplitButton } from "./split-button/index";
 import { FluentText } from "./text/index";
 import { FluentToggleButton } from "./toggle-button/index";
 
@@ -36,6 +37,7 @@ export const AllComponents = {
     FluentPresenceBadge,
     FluentRadio,
     FluentRadioGroup,
+    FluentSplitButton,
     FluentText,
     FluentToggleButton
 };
