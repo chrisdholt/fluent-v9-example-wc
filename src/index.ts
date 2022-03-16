@@ -19,5 +19,8 @@ export * from "./presence-badge/index";
 export * from "./radio/index";
 export * from "./radio-group/index";
 export * from "./split-button/index";
+export * from "./tab";
+export * from "./tab-panel";
+export * from "./tabs";
 export * from "./text/index";
 export * from "./toggle-button/index";
