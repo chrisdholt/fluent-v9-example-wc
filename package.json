@@ -55,7 +55,8 @@
     "typescript": "^3.9.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "yargs": "^17.3.1"
   },
   "dependencies": {
     "@fluentui/react-theme": "^9.0.0-rc.1",
