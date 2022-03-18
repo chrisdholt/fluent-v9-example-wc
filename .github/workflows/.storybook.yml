@@ -1,5 +1,6 @@
 name: Build and Deploy
-on: 
+on:
+  workflow_dispatch: 
   push:
     paths: ["./src/**/*.stories.ts", "./src/components/**"]
 jobs:
