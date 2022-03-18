@@ -15,6 +15,7 @@ export const cardStyles = css`
         border-style: solid;
         border-color: none;
         border-radius: ${tokens.borderRadiusMedium};
+        font-family: ${tokens.fontFamilyBase};
     }
 
     :host([interactive]) {

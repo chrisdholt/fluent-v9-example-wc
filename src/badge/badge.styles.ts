@@ -14,6 +14,7 @@ export const badgeStyles = css`
         box-sizing: border-box;
         align-items: center;
         justify-content: center;
+        font-family: ${tokens.fontFamilyBase};
         font-weight: ${tokens.fontWeightSemibold};
         border-width: ${tokens.strokeWidthThin};
         border-style: solid;

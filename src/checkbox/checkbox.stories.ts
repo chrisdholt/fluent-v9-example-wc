@@ -5,7 +5,7 @@ import CheckboxTemplate from "./fixtures/checkbox.html";
 import "./index";
 
 addons.getChannel().addListener(STORY_RENDERED, (name: string) => {
-    if (name.toLowerCase().startsWith("checkbox")) {
+    if (name.toLowerCase().startsWith("components-checkbox")) {
         document
             .querySelectorAll(".set-indeterminate")
             .forEach((el: FluentCheckbox) => {
