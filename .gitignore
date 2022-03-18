@@ -29,7 +29,6 @@ typings/
 
 # Ignore distribution directory
 dist/
-docs/
 
 # Ignore build www directories
 www/*.js
