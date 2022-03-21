@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { Avatar } from "./avatar";
 import { avatarTemplate as template } from "./avatar.template";
 import { avatarStyles as styles } from "./avatar.styles";
@@ -12,8 +12,14 @@ import { avatarStyles as styles } from "./avatar.styles";
  * Generates HTML Element: `<fluent-avatar>`
  */
 @customElement({
-    name: "fluent-avatar",
-    template,
-    styles,
+  name: "fluent-avatar",
+  template,
+  styles,
 })
 export class FluentAvatar extends Avatar {}
+export interface FluentAvatar
+  extends React.Component<
+    {
+      name?: string;
+    } & React.HTMLAttributes<FluentAvatar>
+  > {}

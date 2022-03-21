@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { checkboxTemplate as template } from "./checkbox.template";
 import { Checkbox } from "./checkbox";
 import { checkboxStyles as styles } from "./checkbox.styles";
@@ -13,8 +13,15 @@ import { checkboxStyles as styles } from "./checkbox.styles";
  * Generates HTML Element: `<fluent-checkbox>`
  */
 @customElement({
-    name: "fluent-checkbox",
-    template,
-    styles,
+  name: "fluent-checkbox",
+  template,
+  styles,
 })
 export class FluentCheckbox extends Checkbox {}
+export interface FluentCheckbox
+  extends React.Component<
+    {
+      disabled?: boolean;
+      checked?: boolean;
+    } & React.HTMLAttributes<FluentCheckbox>
+  > {}

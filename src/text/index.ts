@@ -1,4 +1,4 @@
-import { customElement, html } from '@microsoft/fast-element';
+import { customElement, html } from "@microsoft/fast-element";
 import { Text } from "./text";
 import { textStyles as styles } from "./text.styles";
 
@@ -11,8 +11,14 @@ import { textStyles as styles } from "./text.styles";
  * Generates HTML Element: `<fluent-text>`
  */
 @customElement({
-    name: "fluent-text",
-    template: html`<slot></slot>`,
-    styles
+  name: "fluent-text",
+  template: html`<slot></slot>`,
+  styles,
 })
- export class FluentText extends Text {}
+export class FluentText extends Text {}
+export interface FluentText
+  extends React.Component<
+    {
+      activeId?: string;
+    } & React.HTMLAttributes<FluentText>
+  > {}

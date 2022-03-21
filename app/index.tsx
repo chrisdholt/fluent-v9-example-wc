@@ -4,44 +4,34 @@
 import h from "./pragma"; /* Note: Import wrapped createElement. */
 import ReactDOM from "react-dom";
 import { Fragment } from "react";
-import { FluentButton } from "../src/index";
+import AllComponents from "../src/custom-elements";
+import templates from "./templates";
+AllComponents;
 
-enum Component {
-  Button = "button",
-  Mixed = "mixed",
-  Card = "card",
-}
-
-type Repeat = string;
-
-const component = new URLSearchParams(window.location.search).get(
-  "component"
-) as Component;
-const repeat = new URLSearchParams(window.location.search).get(
-  "repeatNum"
-) as Repeat;
-
+const searchParam = new URLSearchParams(window.location.search);
+const component = searchParam.get("component") || "button";
+const repeat = searchParam.get("repeatNum") || "1";
+const isMultiple = component?.includes(",");
 const repeatNumber = parseInt(repeat);
+
 const renderComponent = () => {
-  switch (component) {
-    case Component.Button:
-      return repeatNumber > 0 ? (
-        [...Array(repeatNumber)].map((e, i) => (
-          <FluentButton appearance="primary" key={i}>
-            Button
-          </FluentButton>
-        ))
-      ) : (
-        <FluentButton appearance="primary">Button</FluentButton>
-      );
-    case Component.Card:
-      return <div>this is a card</div>;
-    case Component.Mixed:
-      return <div>this is a mixed</div>;
-    default:
-      return <FluentButton appearance="primary">Button</FluentButton>;
+  if (isMultiple) {
+    const componentList = component.split(",");
+    const combinedTemplates = componentList.reduce((prev, current) => {
+      prev.push(templates[current]);
+      return prev;
+    }, []);
+
+    return repeatNumber > 0
+      ? [...Array(repeatNumber)].map((e, i) => combinedTemplates)
+      : combinedTemplates;
+  } else {
+    return repeatNumber > 0
+      ? [...Array(repeatNumber)].map((e, i) => templates[component])
+      : templates[component];
   }
 };
+
 ReactDOM.render(
   <Fragment>{renderComponent()}</Fragment>,
   document.getElementById("root")

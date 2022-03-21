@@ -1,4 +1,4 @@
-import { customElement, html } from '@microsoft/fast-element';
+import { customElement, html } from "@microsoft/fast-element";
 import { Image } from "./image";
 import { imageStyles as styles } from "./image.styles";
 
@@ -11,8 +11,14 @@ import { imageStyles as styles } from "./image.styles";
  * Generates HTML Element: `<fluent-image>`
  */
 @customElement({
-    name: "fluent-image",
-    template: html`<slot></slot>`,
-    styles
+  name: "fluent-image",
+  template: html`<slot></slot>`,
+  styles,
 })
- export class FluentImage extends Image {}
+export class FluentImage extends Image {}
+export interface FluentImage
+  extends React.Component<
+    {
+      type?: string;
+    } & React.HTMLAttributes<FluentImage>
+  > {}

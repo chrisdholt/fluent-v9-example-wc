@@ -1,4 +1,5 @@
-import { customElement } from '@microsoft/fast-element';
+import React from "react";
+import { customElement } from "@microsoft/fast-element";
 import { Link } from "./link";
 import { linkTemplate as template } from "./link.template";
 import { linkStyles as styles } from "./link.styles";
@@ -15,11 +16,18 @@ import { linkStyles as styles } from "./link.styles";
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 @customElement({
-    name: "fluent-link",
-    template,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  name: "fluent-link",
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true,
+  },
 })
 export class FluentLink extends Link {}
+
+export interface FluentLink
+  extends React.Component<
+    {
+      href?: string;
+    } & React.HTMLAttributes<FluentLink>
+  > {}

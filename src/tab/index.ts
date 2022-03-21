@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { Tab } from "./tab";
 import { tabTemplate as template } from "./tab.template";
 import { tabStyles as styles } from "./tab.styles";
@@ -12,8 +12,14 @@ import { tabStyles as styles } from "./tab.styles";
  * Generates HTML Element: `<fluent-tab>`
  */
 @customElement({
-    name: "fluent-tab",
-    template,
-    styles,
+  name: "fluent-tab",
+  template,
+  styles,
 })
- export class FluentTab extends Tab {}
+export class FluentTab extends Tab {}
+export interface FluentTab
+  extends React.Component<
+    {
+      activeId?: string;
+    } & React.HTMLAttributes<FluentTab>
+  > {}

@@ -1,4 +1,4 @@
-import { css, customElement } from '@microsoft/fast-element';
+import { css, customElement } from "@microsoft/fast-element";
 import { Button } from "../button/button";
 import { buttonStyles } from "../button/button.styles";
 import { buttonTemplate as template } from "./menu-button.template";
@@ -7,11 +7,13 @@ import { buttonTemplate as template } from "./menu-button.template";
  * @internal
  */
 class MenuButton extends Button {
-    public defaultSlottedContentChanged():void {
-        super.defaultSlottedContentChanged();
+  public defaultSlottedContentChanged(): void {
+    super.defaultSlottedContentChanged();
 
-        return !this.hasChildNodes() ? this.classList.add("childless") : this.classList.remove("childless");
-    }
+    return !this.hasChildNodes()
+      ? this.classList.add("childless")
+      : this.classList.remove("childless");
+  }
 }
 
 /**
@@ -26,33 +28,39 @@ class MenuButton extends Button {
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 @customElement({
-    name: "fluent-menu-button",
-    template,
-    styles: css`
-        ${buttonStyles}
+  name: "fluent-menu-button",
+  template,
+  styles: css`
+    ${buttonStyles}
 
-        :host(.childless) .base {
-            padding: 0 !important;
-        }
+    :host(.childless) .base {
+      padding: 0 !important;
+    }
 
-        :host([size="small"].childless) .base {
-            min-width: 24px !important;
-        }
+    :host([size="small"].childless) .base {
+      min-width: 24px !important;
+    }
 
-        :host([size="medium"].childless) .base {
-            min-width: 32px !important;
-        }
+    :host([size="medium"].childless) .base {
+      min-width: 32px !important;
+    }
 
-        :host([size="large"].childless) .base {
-            min-width: 40px !important;
-        }
+    :host([size="large"].childless) .base {
+      min-width: 40px !important;
+    }
 
-        .icon-only slot[name="end"] > svg {
-            display: none;
-        }
-    `,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+    .icon-only slot[name="end"] > svg {
+      display: none;
+    }
+  `,
+  shadowOptions: {
+    delegatesFocus: true,
+  },
 })
 export class FluentMenuButton extends MenuButton {}
+export interface FluentMenuButton
+  extends React.Component<
+    {
+      type?: string;
+    } & React.HTMLAttributes<FluentMenuButton>
+  > {}

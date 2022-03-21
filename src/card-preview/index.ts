@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { CardPreview } from "./card-preview";
 import { cardPreviewTemplate as template } from "./card-preview.template";
 import { cardPreviewStyles as styles } from "./card-preview.styles";
@@ -12,8 +12,14 @@ import { cardPreviewStyles as styles } from "./card-preview.styles";
  * Generates HTML Element: `<fluent-card-preview>`
  */
 @customElement({
-    name: "fluent-card-preview",
-    template,
-    styles,
+  name: "fluent-card-preview",
+  template,
+  styles,
 })
- export class FluentCardPreview extends CardPreview {}
+export class FluentCardPreview extends CardPreview {}
+export interface FluentCardPreview
+  extends React.Component<
+    {
+      name?: string;
+    } & React.HTMLAttributes<FluentCardPreview>
+  > {}

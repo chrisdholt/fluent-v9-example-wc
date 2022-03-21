@@ -8,6 +8,7 @@ import { FluentCardHeader } from "./card-header/index";
 import { FluentCardPreview } from "./card-preview/index";
 import { FluentCheckbox } from "./checkbox/index";
 import { FluentCounterBadge } from "./counter-badge/index";
+import { FluentCompoundButton } from "./compound-button/index";
 import { FluentDivider } from "./divider/index";
 import { FluentImage } from "./image/index";
 import { FluentLabel } from "./label/index";
@@ -23,29 +24,30 @@ import { FluentTabs } from "./tabs/index";
 import { FluentText } from "./text/index";
 import { FluentToggleButton } from "./toggle-button/index";
 
-export const AllComponents = {
-    FluentAccordion,
-    FluentAccordionItem,
-    FluentAvatar,
-    FluentButton,
-    FluentCard,
-    FluentCardFooter,
-    FluentCardHeader,
-    FluentCardPreview,
-    FluentCheckbox,
-    FluentCounterBadge,
-    FluentDivider,
-    FluentImage,
-    FluentLabel,
-    FluentLink,
-    FluentMenuButton,
-    FluentPresenceBadge,
-    FluentRadio,
-    FluentRadioGroup,
-    FluentSplitButton,
-    FluentTab,
-    FluentTabPanel,
-    FluentTabs,
-    FluentText,
-    FluentToggleButton
+export default {
+  FluentAccordion,
+  FluentAccordionItem,
+  FluentAvatar,
+  FluentButton,
+  FluentCard,
+  FluentCardFooter,
+  FluentCardHeader,
+  FluentCardPreview,
+  FluentCheckbox,
+  FluentCompoundButton,
+  FluentCounterBadge,
+  FluentDivider,
+  FluentImage,
+  FluentLabel,
+  FluentLink,
+  FluentMenuButton,
+  FluentPresenceBadge,
+  FluentRadio,
+  FluentRadioGroup,
+  FluentSplitButton,
+  FluentTab,
+  FluentTabPanel,
+  FluentTabs,
+  FluentText,
+  FluentToggleButton,
 };

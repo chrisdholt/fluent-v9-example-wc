@@ -1,4 +1,4 @@
-import { customElement, html } from '@microsoft/fast-element';
+import { customElement, html } from "@microsoft/fast-element";
 import { Card } from "./card";
 import { cardStyles as styles } from "./card.styles";
 
@@ -11,8 +11,14 @@ import { cardStyles as styles } from "./card.styles";
  * Generates HTML Element: `<fluent-card>`
  */
 @customElement({
-    name: "fluent-card",
-    template: html`<template role="group"><slot></slot></template>`,
-    styles
+  name: "fluent-card",
+  template: html`<template role="group"><slot></slot></template>`,
+  styles,
 })
- export class FluentCard extends Card {}
+export class FluentCard extends Card {}
+export interface FluentCard
+  extends React.Component<
+    {
+      name?: string;
+    } & React.HTMLAttributes<FluentCard>
+  > {}

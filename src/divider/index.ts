@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { Divider } from "./divider";
 import { dividerTemplate as template } from "./divider.template";
 import { dividerStyles as styles } from "./divider.styles";
@@ -12,8 +12,14 @@ import { dividerStyles as styles } from "./divider.styles";
  * Generates HTML Element: `<fluent-divider>`
  */
 @customElement({
-    name: "fluent-divider",
-    template,
-    styles,
+  name: "fluent-divider",
+  template,
+  styles,
 })
- export class FluentDivider extends Divider {}
+export class FluentDivider extends Divider {}
+export interface FluentDivider
+  extends React.Component<
+    {
+      type?: string;
+    } & React.HTMLAttributes<FluentDivider>
+  > {}

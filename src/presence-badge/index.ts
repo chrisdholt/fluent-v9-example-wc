@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { presenceBadgeTemplate as template } from "./presence-badge.template";
 import { PresenceBadge } from "./presence-badge";
 import { presenceBadgeStyles as styles } from "./presence-badge.styles";
@@ -12,8 +12,14 @@ import { presenceBadgeStyles as styles } from "./presence-badge.styles";
  * Generates HTML Element: `<fluent-presence-badge>`
  */
 @customElement({
-    name: "fluent-presence-badge",
-    template,
-    styles,
+  name: "fluent-presence-badge",
+  template,
+  styles,
 })
- export class FluentPresenceBadge extends PresenceBadge {}
+export class FluentPresenceBadge extends PresenceBadge {}
+export interface FluentPresenceBadge
+  extends React.Component<
+    {
+      status?: string;
+    } & React.HTMLAttributes<FluentPresenceBadge>
+  > {}

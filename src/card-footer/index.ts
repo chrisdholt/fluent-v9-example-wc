@@ -1,4 +1,4 @@
-import { customElement, html } from '@microsoft/fast-element';
+import { customElement, html } from "@microsoft/fast-element";
 import { CardFooter } from "./card-footer";
 import { cardFooterTemplate as template } from "./card-footer.template";
 import { cardFooterStyles as styles } from "./card-footer.styles";
@@ -12,8 +12,14 @@ import { cardFooterStyles as styles } from "./card-footer.styles";
  * Generates HTML Element: `<fluent-card-footer>`
  */
 @customElement({
-    name: "fluent-card-footer",
-    template,
-    styles,
+  name: "fluent-card-footer",
+  template,
+  styles,
 })
- export class FluentCardFooter extends CardFooter {}
+export class FluentCardFooter extends CardFooter {}
+export interface FluentCardFooter
+  extends React.Component<
+    {
+      name?: string;
+    } & React.HTMLAttributes<FluentCardFooter>
+  > {}

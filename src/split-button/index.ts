@@ -1,4 +1,4 @@
-import { customElement, FASTElement, html } from '@microsoft/fast-element';
+import { customElement, FASTElement, html } from "@microsoft/fast-element";
 import { splitButtonStyles as styles } from "./split-button.styles";
 
 /**
@@ -13,11 +13,17 @@ import { splitButtonStyles as styles } from "./split-button.styles";
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 @customElement({
-    name: "fluent-split-button",
-    template: html`<slot></slot>`,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  name: "fluent-split-button",
+  template: html`<slot></slot>`,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true,
+  },
 })
 export class FluentSplitButton extends FASTElement {}
+export interface FluentSplitButton
+  extends React.Component<
+    {
+      value?: string;
+    } & React.HTMLAttributes<FluentSplitButton>
+  > {}

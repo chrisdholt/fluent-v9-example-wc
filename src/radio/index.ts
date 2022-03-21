@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { radioTemplate as template } from "./radio.template";
 import { Radio } from "./radio";
 import { radioStyles as styles } from "./radio.styles";
@@ -13,8 +13,14 @@ import { radioStyles as styles } from "./radio.styles";
  * Generates HTML Element: `<fluent-radio>`
  */
 @customElement({
-    name: "fluent-radio",
-    template,
-    styles,
+  name: "fluent-radio",
+  template,
+  styles,
 })
 export class FluentRadio extends Radio {}
+export interface FluentRadio
+  extends React.Component<
+    {
+      value?: string;
+    } & React.HTMLAttributes<FluentRadio>
+  > {}

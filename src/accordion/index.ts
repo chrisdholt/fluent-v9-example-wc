@@ -1,4 +1,4 @@
-import { customElement } from '@microsoft/fast-element';
+import { customElement } from "@microsoft/fast-element";
 import { Accordion } from "./accordion";
 import { accordionTemplate as template } from "./accordion.template";
 import { accordionStyles as styles } from "./accordion.styles";
@@ -12,8 +12,14 @@ import { accordionStyles as styles } from "./accordion.styles";
  * Generates HTML Element: `<fluent-accordion>`
  */
 @customElement({
-    name: "fluent-accordion",
-    template,
-    styles,
+  name: "fluent-accordion",
+  template,
+  styles,
 })
 export class FluentAccordion extends Accordion {}
+export interface FluentAccordion
+  extends React.Component<
+    {
+      expanded?: boolean;
+    } & React.HTMLAttributes<FluentAccordion>
+  > {}
